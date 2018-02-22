@@ -15,7 +15,11 @@ class UserDetailViewController: UIViewController {
             profileImageView.layer.cornerRadius = profileImageView.bounds.width/2
         }
     }
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: UIImageView! {
+        didSet {
+            backgroundImageView.addBlur()
+        }
+    }
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var screenNameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
