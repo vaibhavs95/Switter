@@ -20,6 +20,7 @@ struct User: Codable {
     var tweets: Int?
     var profileImage: String?
     var backgroundImage: String?
+    var backgroundColor: String?
 
     enum CodingKeys: String, CodingKey {
 
@@ -33,6 +34,7 @@ struct User: Codable {
         case tweets = "statuses_count"
         case profileImage = "profile_image_url"
         case backgroundImage = "profile_background_image_url"
+        case backgroundColor = "profile_background_color"
     }
 }
 
