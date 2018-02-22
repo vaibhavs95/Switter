@@ -39,7 +39,7 @@ extension TweetsViewController: UISearchBarDelegate {
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        navigationController?.pushViewController(UserViewController(), animated: true)
+        navigationController?.pushViewController(UserDetailViewController(), animated: true)
     }
 }
 

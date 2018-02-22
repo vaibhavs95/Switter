@@ -1,5 +1,5 @@
 //
-//  UserViewController.swift
+//  UserDetailViewController.swift
 //  Switter
 //
 //  Created by Vaibhav Singh on 22/02/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserViewController: UIViewController {
+class UserDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,5 +26,4 @@ class UserViewController: UIViewController {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         title  = "Something Big"
     }
-
 }

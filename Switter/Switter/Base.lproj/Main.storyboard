@@ -14,6 +14,11 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TweetsViewController" customModule="Switter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HnL-i2-ZRh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tableView>
                     <navigationItem key="navigationItem" id="g2J-g7-Xfv">
                         <nil key="title"/>
                     </navigationItem>
@@ -22,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="479.19999999999999" y="133.5832083958021"/>
         </scene>
-        <!--User View Controller-->
+        <!--User Detail View Controller-->
         <scene sceneID="ZT7-bc-diL">
             <objects>
-                <viewController id="phx-xT-iIS" customClass="UserViewController" customModule="Switter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="phx-xT-iIS" customClass="UserDetailViewController" customModule="Switter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eW3-Mc-u3m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +42,7 @@
                                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Title" id="SIM-VX-prT"/>
+                                    <navigationItem title="User Detail" id="SIM-VX-prT"/>
                                 </items>
                             </navigationBar>
                         </subviews>
