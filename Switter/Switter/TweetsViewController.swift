@@ -17,14 +17,18 @@ class TweetsViewController: UIViewController {
 
         searchField.delegate = self
         navigationItem.titleView =  searchField
-
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        configureNavBar()
+    }
+
+    private func configureNavBar() {
         navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
     }
 }
 
