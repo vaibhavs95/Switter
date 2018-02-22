@@ -12,6 +12,7 @@
 		22E1F88F203ED13D0078DFDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E1F88D203ED13D0078DFDA /* Main.storyboard */; };
 		22E1F891203ED13D0078DFDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22E1F890203ED13D0078DFDA /* Assets.xcassets */; };
 		22E1F894203ED13D0078DFDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E1F892203ED13D0078DFDA /* LaunchScreen.storyboard */; };
+		3993E4FDADA814548D39CF51 /* Pods_Switter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52E76571474E5F5B8923715 /* Pods_Switter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		22E1F890203ED13D0078DFDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22E1F893203ED13D0078DFDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22E1F895203ED13D0078DFDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65FE9B759090BBC2EEA0FA98 /* Pods-Switter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Switter/Pods-Switter.release.xcconfig"; sourceTree = "<group>"; };
+		B52E76571474E5F5B8923715 /* Pods_Switter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B8EE4ACD2AF70D195DAD76 /* Pods-Switter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Switter/Pods-Switter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3993E4FDADA814548D39CF51 /* Pods_Switter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				22E1F888203ED13D0078DFDA /* Switter */,
 				22E1F887203ED13D0078DFDA /* Products */,
+				4EE4A5AD3A13A45E8E52E954 /* Pods */,
+				7DC286AD7C1DD9AAB4E984FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = Switter;
 			sourceTree = "<group>";
 		};
+		4EE4A5AD3A13A45E8E52E954 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3B8EE4ACD2AF70D195DAD76 /* Pods-Switter.debug.xcconfig */,
+				65FE9B759090BBC2EEA0FA98 /* Pods-Switter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7DC286AD7C1DD9AAB4E984FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B52E76571474E5F5B8923715 /* Pods_Switter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22E1F898203ED13D0078DFDA /* Build configuration list for PBXNativeTarget "Switter" */;
 			buildPhases = (
+				EDD84D0F88F9B920F1157EDB /* [CP] Check Pods Manifest.lock */,
 				22E1F882203ED13D0078DFDA /* Sources */,
 				22E1F883203ED13D0078DFDA /* Frameworks */,
 				22E1F884203ED13D0078DFDA /* Resources */,
+				DE34BCBCC23D69B74597D668 /* [CP] Embed Pods Frameworks */,
+				B7462C223440C33CE2E46F4D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B7462C223440C33CE2E46F4D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Switter/Pods-Switter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE34BCBCC23D69B74597D668 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Switter/Pods-Switter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDD84D0F88F9B920F1157EDB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Switter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		22E1F882203ED13D0078DFDA /* Sources */ = {
@@ -272,6 +350,7 @@
 		};
 		22E1F899203ED13D0078DFDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3B8EE4ACD2AF70D195DAD76 /* Pods-Switter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +366,7 @@
 		};
 		22E1F89A203ED13D0078DFDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65FE9B759090BBC2EEA0FA98 /* Pods-Switter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
