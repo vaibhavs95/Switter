@@ -10,9 +10,12 @@ import UIKit
 
 class TweetsViewController: UIViewController {
 
+    let searchField = UISearchBar()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.navigationItem.titleView =  searchField
     }
 
     override func didReceiveMemoryWarning() {
