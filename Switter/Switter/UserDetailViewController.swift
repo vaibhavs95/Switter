@@ -10,6 +10,20 @@ import UIKit
 
 class UserDetailViewController: UIViewController {
 
+    @IBOutlet weak var profileImageView: UIImageView! {
+        didSet {
+            profileImageView.layer.cornerRadius = profileImageView.bounds.width/2
+        }
+    }
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var screenNameLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet weak var tweetCountLabel: UILabel!
+    @IBOutlet weak var followersLabel: UILabel!
+    @IBOutlet weak var favouritesLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
