@@ -12,7 +12,7 @@ class UserDetailViewController: UIViewController {
 
     @IBOutlet weak var profileImageView: UIImageView! {
         didSet {
-            profileImageView.layer.cornerRadius = profileImageView.bounds.width/2
+            profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
         }
     }
     @IBOutlet weak var backgroundImageView: UIImageView! {
