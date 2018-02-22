@@ -36,6 +36,7 @@ class UserDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        locationLabel.text = "sdfsdfsdfs"
         configureNavBar()
     }
 
