@@ -10,6 +10,16 @@ import UIKit
 
 class TweetsViewController: UIViewController {
 
+    @IBOutlet var tableView: UITableView!{
+        didSet {
+            tableView.tableFooterView = UIView()
+            tableView.dataSource = self
+            tableView.delegate = self
+            tableView.estimatedSectionHeaderHeight = UITableViewAutomaticDimension
+            tableView.register(TweetTableViewCell.self, forCellReuseIdentifier: String(describing: TweetTableViewCell.self))
+        }
+    }
+
     let searchField = UISearchBar()
 
     override func viewDidLoad() {
@@ -29,6 +39,17 @@ class TweetsViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+    }
+}
+
+extension TweetsViewController: UITableViewDataSource, UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 }
 

@@ -22,15 +22,19 @@
                     <navigationItem key="navigationItem" id="g2J-g7-Xfv">
                         <nil key="title"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="HnL-i2-ZRh" id="gEC-gp-EmU"/>
+                        <segue destination="phx-xT-iIS" kind="show" id="ENk-Nv-Ko9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="479.19999999999999" y="133.5832083958021"/>
         </scene>
-        <!--User Detail View Controller-->
+        <!--View Controller-->
         <scene sceneID="ZT7-bc-diL">
             <objects>
-                <viewController storyboardIdentifier="UserDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="phx-xT-iIS" customClass="UserDetailViewController" customModule="Switter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="phx-xT-iIS" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eW3-Mc-u3m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
