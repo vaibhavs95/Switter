@@ -55,8 +55,11 @@ extension TweetsViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension TweetsViewController: UISearchBarDelegate {
 
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        guard let existingQuery = searchBar.text as NSString? else {return false}
+        let updatedString = existingQuery.replacingCharacters(in: range, with: text)
 
+        return updatedString.count <= 500 //Twitter's search query's max limit
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
