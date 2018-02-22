@@ -14,15 +14,28 @@ class TweetsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.titleView =  searchField
+
+        searchField.delegate = self
+        navigationItem.titleView =  searchField
+
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationController?.navigationBar.prefersLargeTitles = false
+    }
+}
+
+extension TweetsViewController: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
     }
 
-
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        navigationController?.pushViewController(UserViewController(), animated: true)
+    }
 }
 
