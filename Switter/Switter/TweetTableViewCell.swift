@@ -28,5 +28,17 @@ class TweetTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+
+    func configure(with tweet: TweetPreviewCellPresentable) {
+        usernameLabel.text = tweet.user
+        userHandleLabel.text = tweet.username
+        timeLabel.text = tweet.createdDate
+        contentLabel.text = tweet.text
+        if let _ = tweet.imageURL {
+
+        } else {
+            contentImage.isHidden = true
+        }
+    }
     
 }

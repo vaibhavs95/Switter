@@ -28,6 +28,14 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var followersLabel: UILabel!
     @IBOutlet weak var favouritesLabel: UILabel!
 
+    private var user: User?
+
+    convenience init(user: User) {
+        self.init()
+
+        self.user = user
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,8 +44,17 @@ class UserDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        locationLabel.text = "sdfsdfsdfs"
         configureNavBar()
+        
+        if let userData = user {
+            configure(with: userData)
+        } else {
+            userNameLabel.text = "No Record Found!!!"
+            backgroundImageView.backgroundColor = .red
+            for view in [screenNameLabel, locationLabel, languageLabel, tweetCountLabel, followersLabel, favouritesLabel] {
+                view?.isHidden = true
+            }
+        }
     }
 
     private func configureNavBar() {
@@ -45,4 +62,9 @@ class UserDetailViewController: UIViewController {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         title  = "Something Big"
     }
+
+    private func configure(with user: User) {
+
+    }
+
 }
