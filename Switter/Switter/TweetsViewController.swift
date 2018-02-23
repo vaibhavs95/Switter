@@ -100,7 +100,7 @@ extension TweetsViewController {
                 case let .tweet(presentable):
                     let cell: TweetTableViewCell = table.dequeueReusableCell(withIdentifier: String(describing: TweetTableViewCell.self), for: indexPath) as! TweetTableViewCell
 
-//                    cell.configure(presentable: presentable)
+                    cell.configure(with: presentable)
                     return cell
                 }
         })
