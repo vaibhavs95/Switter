@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxDataSources
 
 class TweetsViewController: UIViewController {
 
@@ -21,6 +23,15 @@ class TweetsViewController: UIViewController {
     }
 
     let searchField = UISearchBar()
+    private var viewModel: SwitterViewModel!
+    private var dataSource: RxTableViewSectionedAnimatedDataSource<TweetPreviewSectionModel>?
+    private var disposeBag = DisposeBag()
+
+    convenience init(viewModel: SwitterViewModel) {
+        self.init()
+
+        self.viewModel = viewModel
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +50,16 @@ class TweetsViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+    }
+
+    private func setupTableView() {
+        let dataSource = TweetsViewController.animatedDatasource()
+        self.dataSource = dataSource
+
+        viewModel.dataSource
+            .asDriver(onErrorJustReturn: [])
+            .drive(tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
     }
 }
 
@@ -64,6 +85,25 @@ extension TweetsViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         navigationController?.pushViewController(UserDetailViewController(), animated: true)
+    }
+}
+
+extension TweetsViewController {
+
+    static func animatedDatasource() -> RxTableViewSectionedAnimatedDataSource<TweetPreviewSectionModel> {
+        return RxTableViewSectionedAnimatedDataSource(
+            animationConfiguration: AnimationConfiguration(insertAnimation: .top,
+                                                           reloadAnimation: .none,
+                                                           deleteAnimation: .left),
+            configureCell: { (dataSource, table, indexPath, item) in
+                switch item {
+                case let .tweet(presentable):
+                    let cell: TweetTableViewCell = table.dequeueReusableCell(withIdentifier: String(describing: TweetTableViewCell.self), for: indexPath) as! TweetTableViewCell
+
+//                    cell.configure(presentable: presentable)
+                    return cell
+                }
+        })
     }
 }
 
