@@ -50,6 +50,20 @@ class TweetsViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonTapped))
+        navigationItem.rightBarButtonItem = doneButton
+
+        Observable.of(searchField.rx.searchButtonClicked, doneButton.rx.tap)
+            .map { _ in return self.searchField.text ?? "" }
+            .filter { !$0.isEmpty }
+            .bind(to: viewModel.searchQueryUpdate)
+            .disposed(by: disposeBag)
+//        doneButton.rx.tap
+//            .map { _ in return self.searchField.text ?? "" }
+//            .filter { !$0.isEmpty }
+//            .bind(to: viewModel.searchQueryUpdate)
+//            .disposed(by: disposeBag)
     }
 
     private func setupTableView() {
@@ -60,6 +74,10 @@ class TweetsViewController: UIViewController {
             .asDriver(onErrorJustReturn: [])
             .drive(tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+    }
+
+    @objc func doneButtonTapped(sender: Any?) {
+
     }
 }
 
@@ -99,8 +117,8 @@ extension TweetsViewController {
                 switch item {
                 case let .tweet(presentable):
                     let cell: TweetTableViewCell = table.dequeueReusableCell(withIdentifier: String(describing: TweetTableViewCell.self), for: indexPath) as! TweetTableViewCell
+                    cell.configure(with: presentable)
 
-                    cell.configure(tweet: presentable)
                     return cell
                 }
         })

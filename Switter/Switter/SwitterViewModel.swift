@@ -12,10 +12,10 @@ import RxSwift
 struct SwitterViewModel {
 
     var dataSource: Observable<[TweetPreviewSectionModel]>
-    var repoNameUpdate: Variable<String> = Variable.init("Tesla")
+    var searchQueryUpdate: Variable<String> = Variable.init("Tesla")
 
     init(repos: [Tweet]) {
-        dataSource = repoNameUpdate.asObservable()
+        dataSource = searchQueryUpdate.asObservable()
             .flatMap { SwitterViewModel.getRepos(searchQuery: $0) }
             .map { tweets in
                 let items = tweets

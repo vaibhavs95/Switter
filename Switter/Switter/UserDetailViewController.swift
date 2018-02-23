@@ -50,7 +50,8 @@ class UserDetailViewController: UIViewController {
             configure(with: userData)
         } else {
             userNameLabel.text = "No Record Found!!!"
-            backgroundImageView.backgroundColor = .red
+            backgroundImageView.image = nil
+            backgroundImageView.backgroundColor = UIColor.darkGray
             for view in [screenNameLabel, locationLabel, languageLabel, tweetCountLabel, followersLabel, favouritesLabel] {
                 view?.isHidden = true
             }
